@@ -1,38 +1,218 @@
-.App {
+/*react-weather-app*/
+h1 {
+  font-family: "Xanh Mono", monospace;
+  font-size: 4em;
+  font-weight: bold;
+}
+
+h2,
+h3,
+li,
+p {
+  font-family: "Xanh Mono", monospace;
+}
+
+h1,
+h3,
+p {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  margin-top: 20px;
+  margin-bottom: 0;
+  padding: 0px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.city-heading {
+  font-size: 3em;
+  padding-left: 34px;
+  padding-top: 30px;
+  padding-bottom: 0;
+  margin-bottom: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+h3,
+p {
+  font-size: 2em;
+}
+
+.weather-container {
+  background-color: #fff;
+  border: 10px outset #94b1aa;
+  margin: 0 auto;
+  margin-top: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 1), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  max-width: fit-content;
+}
+
+.weather-forecast {
+  text-align: center;
+  font-family: "Xanh Mono", monospace;
+  color: #000;
+  margin-top: 20px;
+  margin: 0 auto;
+  padding: 0 20px 40px 20px;
+}
+
+.weather-forecast-date {
+  font-size: 26px;
+  opacity: 0.8;
+}
+
+.weather-forecast-temperature {
+  font-size: 23px;
+}
+
+.weather-forecast-temperature-max {
+  font-weight: bold;
+}
+
+.weather-forecast-temperature-min {
+  opacity: 0.8;
+}
+
+.float-left {
+  float: left;
+  padding-left: 34px;
+}
+
+.units {
+  position: relative;
+  top: -13px;
+}
+
+.currentDegree {
+  font-size: 54px;
+  position: relative;
+  top: 6px;
+  font-family: "Xanh Mono", monospace;
+}
+
+.input-form {
+  padding-left: 32px;
+}
+
+.search-button {
+  background-color: #94b1aa;
+  color: #000;
+}
+
+.search-button:hover {
+  background-color: rgb(44, 138, 138);
+}
+
+#local-time {
+  text-align: left;
+  font-size: 26px;
+  padding-left: 34px;
+}
+
+#celsius-link {
+  text-decoration: none;
+  font-size: 26px;
+}
+
+#fahrenheit-link {
+  text-decoration: none;
+  font-size: 26px;
+}
+
+#fahrenheit-link,
+#celsius-link {
+  font-family: "Xanh Mono", monospace;
+}
+
+.active {
+  cursor: default;
+  font-weight: bold;
+  color: #202020;
+}
+
+.active:hover {
+  color: #202020;
+}
+
+.location-description-list {
+  list-style: none;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  font-size: 26px;
+}
+
+.humid-wind-list {
+  list-style-type: none;
+  margin: 0;
+  padding-left: 0;
+  font-size: 26px;
+}
+
+#description {
+  text-align: left;
+  padding-left: 34px;
+}
+
+#description:first-letter {
+  text-transform: capitalize;
+}
+
+#description,
+#humidity,
+#wind {
+  font-size: 26px;
+}
+
+#weather-img {
+  margin-left: 5px;
+  padding-right: 70px;
+}
+
+#leaf-img {
+  margin: 0 auto;
+  width: 4%;
+  padding-bottom: 6px;
+}
+
+#footer {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#footer p {
+  font-size: 18px;
+  color: #000;
+  font-weight: bold;
+}
+
+#footer a {
+  text-decoration: none;
+  padding-left: 5px;
+}
+
+#footer a:hover {
+  text-decoration: underline;
+}
+
+.logo {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  text-align: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-color: #fff;
+  padding: 5px 2px 5px 2px;
+  border-radius: 10px;
+  width: 370px;
+  margin: 0 auto;
 }
 
-.App-link {
-  color: #61dafb;
+.logo img {
+  width: 50px;
+  border-radius: 50%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.logoTextSpan {
+  padding: 10px;
+  color: #000;
 }
