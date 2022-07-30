@@ -10,7 +10,7 @@ export default function Footer() {
             <a
               href="https://github.com/smirrebinx/vanilla-weather-app.git"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
             >
               Open source code
             </a>
