@@ -1,7 +1,10 @@
 import React from "react";
 import axios from "axios";
+import Header from "./Header";
+import Footer from "./Footer";
+import Search from "./Search";
 
-export default function Weather(props) {
+export default function WeatherApp(props) {
   function handleResponse(response) {
     alert(
       `The weather in ${response.data.name} is ${response.data.main.temp}°C`
