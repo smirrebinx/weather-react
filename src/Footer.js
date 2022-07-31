@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="logo">
           <small>
             <a
-              href="https://github.com/smirrebinx/vanilla-weather-app.git"
+              href="https://github.com/smirrebinx/weather-react.git"
               target="_blank"
               rel="noopener noreferrer"
             >
