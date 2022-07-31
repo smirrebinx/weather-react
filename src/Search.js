@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import weather from "./images/weather.png";
 
 export default function Search() {
   const [city, setCity] = useState(false);
@@ -33,11 +34,7 @@ export default function Search() {
 
   if (submit) {
     return (
-      <form
-        className="search-form"
-        onSubmit={handleSubmit}
-        onChange={updateCity}
-      >
+      <form onSubmit={handleSubmit} onChange={updateCity}>
         <div className="form-container">
           <div className="col-md-12 align-items-center">
             <div className="row">
@@ -84,14 +81,48 @@ export default function Search() {
               </ul>
             </div>
           </div>
+          <div className="col-md-3">
+            <img
+              className="img-fluid d-block"
+              id="weather-img"
+              src={weather}
+              alt="A person pointing to a weather forecast"
+            />
+          </div>
         </div>
       </form>
     );
   } else {
     return (
       <form onSubmit={handleSubmit} onChange={updateCity}>
-        <input type="search" placeholder="Enter a city..." />
-        <input type="submit" value="Search" />
+        <div className="form-container">
+          <div className="col-md-12 align-items-center">
+            <div className="row">
+              <div className="col-md-8 align-items-center">
+                <div className="input-form">
+                  <input
+                    type="search"
+                    placeholder="Enter a city..."
+                    className="form-control input-search"
+                  />
+                  <input
+                    type="submit"
+                    value="Search"
+                    className="form-control btn btn-outline-secondary shadow-sm search-button"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="col-md-3">
+          <img
+            className="img-fluid d-block"
+            id="weather-img"
+            src={weather}
+            alt="A person pointing to a weather forecast"
+          />
+        </div>
       </form>
     );
   }
