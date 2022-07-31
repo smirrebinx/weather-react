@@ -12,8 +12,12 @@ export default function CurrentWeather() {
               <div className="temp-unit">
                 <span className="currentDegree"></span>
                 <span className="units">
-                  <a href="/" className="celsius-link active"></a>{" "}
-                  <a href="/" className="fahrenheit-link"></a>
+                  <a href="/" className="celsius-link active">
+                    °C
+                  </a>{" "}
+                  <a href="/" className="fahrenheit-link">
+                    F
+                  </a>
                 </span>
               </div>
             </div>
