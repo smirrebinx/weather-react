@@ -9,8 +9,8 @@ export default function Challenge() {
     <div className="container">
       <div className="weather-container">
         <Header />
-        <CurrentWeather />
         <Search temperature={20} />
+        <CurrentWeather />
         <div>
           <div className="col text-center">
             <div className="weather-forecast" id="forecast"></div>
