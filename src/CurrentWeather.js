@@ -7,7 +7,7 @@ export default function CurrentWeather() {
       <div className="row">
         <div className="col-md-6 icon d-flex align-items-center text-center">
           <div className="clearfix weather-temperature">
-            <img src="" alt="" id="icon" className="float-left" />
+            <img src="" alt="" className="float-left" />
             <div className="float-left">
               <div className="temp-unit">
                 <span className="currentDegree"></span>
