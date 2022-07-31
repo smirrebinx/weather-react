@@ -9,7 +9,7 @@ export default function Challenge() {
     <div className="container">
       <div className="weather-container">
         <Header />
-        <Search temperature={20} />
+        <Search />
         <CurrentWeather />
         <div>
           <div className="col text-center">
