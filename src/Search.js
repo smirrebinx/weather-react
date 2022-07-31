@@ -61,21 +61,19 @@ export default function Search() {
             <h2>{city}</h2>
             <ul className="location-description-list">
               <li>Local time:</li>
-              <li>Temperature: {message.temperature}°C</li>
               <li className="description">{message.description}</li>
-              <li>Humidity: {message.humidity}%</li>
-              <li>Wind: {message.wind} km/h</li>
               <li>
                 <img src={message.icon} alt="Description of weather" />
               </li>
+              <li>Temperature: {message.temperature}°C</li>
             </ul>
             <div className="col-md-3 text-center">
               <ul className="humid-wind-list">
                 <li>
-                  <span id="humidity"></span>
+                  <span id="humidity">Humidity: {message.humidity}%</span>
                 </li>
                 <li>
-                  <span id="wind"></span>
+                  <span id="wind">Wind: {message.wind} km/h</span>
                 </li>
               </ul>
             </div>
