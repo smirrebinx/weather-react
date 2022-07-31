@@ -4,9 +4,9 @@ import leaf from "./images/leaf.png";
 export default function Header() {
   return (
     <div className="App">
-      <div class="container">
+      <div className="container">
         <h1>Weather</h1>
-        <div class="col-md-12 align-items-center">
+        <div className="col-md-12 align-items-center">
           <img
             className="img-fluid d-block leaf-img"
             src={leaf}
