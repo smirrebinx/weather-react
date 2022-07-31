@@ -103,24 +103,24 @@ p {
   background-color: rgb(44, 138, 138);
 }
 
-#local-time {
+.local-time {
   text-align: left;
   font-size: 26px;
   padding-left: 34px;
 }
 
-#celsius-link {
+.celsius-link {
   text-decoration: none;
   font-size: 26px;
 }
 
-#fahrenheit-link {
+.fahrenheit-link {
   text-decoration: none;
   font-size: 26px;
 }
 
-#fahrenheit-link,
-#celsius-link {
+.fahrenheit-link,
+.celsius-link {
   font-family: "Xanh Mono", monospace;
 }
 
@@ -149,16 +149,16 @@ p {
   font-size: 26px;
 }
 
-#description {
+.description {
   text-align: left;
   padding-left: 34px;
 }
 
-#description:first-letter {
+.description:first-letter {
   text-transform: capitalize;
 }
 
-#description,
+.description,
 #humidity,
 #wind {
   font-size: 26px;
@@ -169,7 +169,7 @@ p {
   padding-right: 70px;
 }
 
-#leaf-img {
+.leaf-img {
   margin: 0 auto;
   width: 4%;
   padding-bottom: 6px;
