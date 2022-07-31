@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import axios from "axios";
-import weather from "./images/weather.png";
 
 export default function Search() {
   const [city, setCity] = useState(false);
@@ -63,10 +62,17 @@ export default function Search() {
               <li>Local time:</li>
               <li className="description">{message.description}</li>
               <li>
-                <img src={message.icon} alt="Description of weather" />
+                <img
+                  src={message.icon}
+                  alt="Description of weather"
+                  className="float-left"
+                />
               </li>
               <li>Temperature: {message.temperature}°C</li>
             </ul>
+          </div>
+          <div className="col-md-6 icon d-flex align-items-center text-center">
+            <div className="clearfix weather-temperature"></div>
             <div className="col-md-3 text-center">
               <ul className="humid-wind-list">
                 <li>
