@@ -34,51 +34,98 @@ export default function Search() {
 
   if (submit) {
     return (
-      <form onSubmit={handleSubmit} onChange={updateCity}>
-        <div className="form-container">
-          <div className="col-md-12 align-items-center">
-            <div className="row">
-              <div className="col-md-8 align-items-center">
-                <div className="input-form">
-                  <input
-                    type="search"
-                    placeholder="Search for a city"
-                    className="form-control input-search"
-                  />
-                  <input
-                    type="submit"
-                    value="Search"
-                    className="form-control btn btn-outline-secondary shadow-sm search-button"
-                  />
+      <div className="container">
+        <form onSubmit={handleSubmit} onChange={updateCity}>
+          <div className="row">
+            <div className="col-md-8 align-items-center">
+              <div className="input-form">
+                <input
+                  type="search"
+                  placeholder="Search for a city"
+                  className="form-control input-search"
+                />
+              </div>
+            </div>
+            <div className="col-sm-2 align-items-center">
+              <input
+                type="submit"
+                value="Search"
+                className="form-control btn btn-outline-secondary shadow-sm search-button"
+              />
+            </div>
+          </div>
+        </form>
+        <h2>{city}</h2>
+        <ul className="location-description-list">
+          <li>Local time:</li>
+          <li className="description">{message.description}</li>
+        </ul>
+        <div className="row">
+          <div className="col-md-6 icon d-flex align-items-center text-center">
+            <div className="clearfix weather-temperature">
+              <img
+                src={message.icon}
+                alt="Description of weather"
+                className="float-left"
+              />
+              <div className="float-left">
+                <div className="temp-unit">
+                  <span className="currentDegree">{message.temperature}°C</span>
+                  <span className="units">
+                    <a href="/" className="celsius-link active">
+                      °C
+                    </a>{" "}
+                    <a href="/" className="fahrenheit-link">
+                      F
+                    </a>
+                  </span>
                 </div>
               </div>
-              <div className="col-sm-2 align-items-center"></div>
             </div>
-            <h2>{city}</h2>
-            <ul className="location-description-list">
-              <li>Local time:</li>
-              <li className="description">{message.description}</li>
-              <li>
-                <img
-                  src={message.icon}
-                  alt="Description of weather"
-                  className="float-left"
-                />
-              </li>
-              <li>Temperature: {message.temperature}°C</li>
-            </ul>
           </div>
-          <div className="col-md-6 icon d-flex align-items-center text-center">
-            <div className="clearfix weather-temperature"></div>
-            <div className="col-md-3 text-center">
-              <ul className="humid-wind-list">
-                <li>
-                  <span id="humidity">Humidity: {message.humidity}%</span>
-                </li>
-                <li>
-                  <span id="wind">Wind: {message.wind} km/h</span>
-                </li>
-              </ul>
+        </div>
+        <div className="col-md-3 text-center">
+          <ul className="humid-wind-list">
+            <li>
+              <span id="humidity">Humidity: {message.humidity}%</span>
+            </li>
+            <li>
+              <span id="wind">Wind: {message.wind} km/h</span>
+            </li>
+          </ul>
+        </div>
+        <div className="col-md-3">
+          <img
+            className="img-fluid d-block"
+            id="weather-img"
+            src={weather}
+            alt="A person pointing to a weather forecast"
+          />
+        </div>
+      </div>
+    );
+  } else {
+    return (
+      <div className="container">
+        <form onSubmit={handleSubmit} onChange={updateCity}>
+          <div className="form-container">
+            <div className="col-md-12 align-items-center">
+              <div className="row">
+                <div className="col-md-8 align-items-center">
+                  <div className="input-form">
+                    <input
+                      type="search"
+                      placeholder="Enter a city..."
+                      className="form-control input-search"
+                    />
+                    <input
+                      type="submit"
+                      value="Search"
+                      className="form-control btn btn-outline-secondary shadow-sm search-button"
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <div className="col-md-3">
@@ -89,41 +136,8 @@ export default function Search() {
               alt="A person pointing to a weather forecast"
             />
           </div>
-        </div>
-      </form>
-    );
-  } else {
-    return (
-      <form onSubmit={handleSubmit} onChange={updateCity}>
-        <div className="form-container">
-          <div className="col-md-12 align-items-center">
-            <div className="row">
-              <div className="col-md-8 align-items-center">
-                <div className="input-form">
-                  <input
-                    type="search"
-                    placeholder="Enter a city..."
-                    className="form-control input-search"
-                  />
-                  <input
-                    type="submit"
-                    value="Search"
-                    className="form-control btn btn-outline-secondary shadow-sm search-button"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="col-md-3">
-          <img
-            className="img-fluid d-block"
-            id="weather-img"
-            src={weather}
-            alt="A person pointing to a weather forecast"
-          />
-        </div>
-      </form>
+        </form>
+      </div>
     );
   }
 }
