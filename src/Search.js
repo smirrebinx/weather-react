@@ -13,7 +13,7 @@ export default function Search() {
       temperature: Math.round(response.data.main.temp),
       description: response.data.weather[0].description,
       humidity: response.data.main.humidity,
-      wind: response.data.wind.speed,
+      wind: Math.round(response.data.wind.speed),
       icon: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
     });
   }
@@ -55,9 +55,8 @@ export default function Search() {
             </div>
           </div>
         </form>
-        <h2>{city}</h2>
+        <h2 className="city-heading">{city}</h2>
         <ul className="location-description-list">
-          <li>Local time:</li>
           <li className="description">{message.description}</li>
         </ul>
         <div className="row">
