@@ -32,29 +32,33 @@ export default function Search() {
     setCity(event.target.value);
   }
 
+  let form = (
+    <form onSubmit={handleSubmit} onChange={updateCity}>
+      <div className="row">
+        <div className="col-md-8 align-items-center">
+          <div className="input-form">
+            <input
+              type="search"
+              placeholder="Search for a city"
+              className="form-control input-search"
+            />
+          </div>
+        </div>
+        <div className="col-sm-2 align-items-center">
+          <input
+            type="submit"
+            value="Search"
+            className="form-control btn btn-outline-secondary shadow-sm search-button"
+          />
+        </div>
+      </div>
+    </form>
+  );
+
   if (submit) {
     return (
       <div className="container">
-        <form onSubmit={handleSubmit} onChange={updateCity}>
-          <div className="row">
-            <div className="col-md-8 align-items-center">
-              <div className="input-form">
-                <input
-                  type="search"
-                  placeholder="Search for a city"
-                  className="form-control input-search"
-                />
-              </div>
-            </div>
-            <div className="col-sm-2 align-items-center">
-              <input
-                type="submit"
-                value="Search"
-                className="form-control btn btn-outline-secondary shadow-sm search-button"
-              />
-            </div>
-          </div>
-        </form>
+        {form}
         <h2 className="city-heading">{city}</h2>
         <ul className="location-description-list">
           <li className="description">{message.description}</li>
@@ -106,36 +110,15 @@ export default function Search() {
   } else {
     return (
       <div className="container">
-        <form onSubmit={handleSubmit} onChange={updateCity}>
-          <div className="form-container">
-            <div className="col-md-12 align-items-center">
-              <div className="row">
-                <div className="col-md-8 align-items-center">
-                  <div className="input-form">
-                    <input
-                      type="search"
-                      placeholder="Enter a city..."
-                      className="form-control input-search"
-                    />
-                    <input
-                      type="submit"
-                      value="Search"
-                      className="form-control btn btn-outline-secondary shadow-sm search-button"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-md-3">
-            <img
-              className="img-fluid d-block"
-              id="weather-img"
-              src={weather}
-              alt="A person pointing to a weather forecast"
-            />
-          </div>
-        </form>
+        {form}
+        <div className="col-md-3">
+          <img
+            className="img-fluid d-block"
+            id="weather-img"
+            src={weather}
+            alt="A person pointing to a weather forecast"
+          />
+        </div>
       </div>
     );
   }
