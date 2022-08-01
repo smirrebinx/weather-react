@@ -7,6 +7,12 @@ export default function Search() {
   const [submit, setSubmit] = useState("");
   const [message, setMessage] = useState("");
 
+  let placeholderCity = "Malmo";
+  let placeholderDescription = "Clear";
+  let placeholderTemperature = "20";
+  let placeholderHumidity = "71";
+  let placeholderWind = "7";
+
   function showWeather(response) {
     setSubmit(true);
     setMessage({
@@ -55,6 +61,8 @@ export default function Search() {
     </form>
   );
 
+  let placeholderIcon = "https://ssl.gstatic.com/onebox/weather/64/sunny.png";
+
   if (submit) {
     return (
       <div className="container">
@@ -76,7 +84,7 @@ export default function Search() {
                   <span className="currentDegree">{message.temperature}</span>
                   <span className="units">
                     <a href="/" className="celsius-link active">
-                      °C
+                      °C|
                     </a>{" "}
                     <a href="/" className="fahrenheit-link">
                       F
@@ -86,24 +94,23 @@ export default function Search() {
               </div>
             </div>
           </div>
-        </div>
-        <div className="col-md-3 text-center">
-          <ul className="humid-wind-list">
-            <li>
-              <span id="humidity">Humidity: {message.humidity}%</span>
-            </li>
-            <li>
-              <span id="wind">Wind: {message.wind} km/h</span>
-            </li>
-          </ul>
-        </div>
-        <div className="col-md-3">
-          <img
-            className="img-fluid d-block"
-            id="weather-img"
-            src={weather}
-            alt="A person pointing to a weather forecast"
-          />
+          <div className="col-md-3 text-center">
+            <ul className="humid-wind-list">
+              <li>
+                <span className="humidity">Humidity: {message.humidity}%</span>
+              </li>
+              <li>
+                <span className="wind">Wind: {message.wind} km/h</span>
+              </li>
+            </ul>
+          </div>
+          <div className="col-md-3">
+            <img
+              className="img-fluid d-block weather-img"
+              src={weather}
+              alt="A person pointing to a weather forecast"
+            />
+          </div>
         </div>
       </div>
     );
@@ -111,13 +118,54 @@ export default function Search() {
     return (
       <div className="container">
         {form}
-        <div className="col-md-3">
-          <img
-            className="img-fluid d-block"
-            id="weather-img"
-            src={weather}
-            alt="A person pointing to a weather forecast"
-          />
+        <h2 className="city-heading">{placeholderCity}</h2>
+        <ul className="location-description-list">
+          <li className="description">{placeholderDescription}</li>
+        </ul>
+        <div className="row">
+          <div className="col-md-6 icon d-flex align-items-center text-center">
+            <div className="clearfix weather-temperature">
+              <img
+                src={placeholderIcon}
+                alt="Description of weather"
+                className="float-left"
+              />
+              <div className="float-left">
+                <div className="temp-unit">
+                  <span className="currentDegree">
+                    {placeholderTemperature}
+                  </span>
+                  <span className="units">
+                    <a href="/" className="celsius-link active">
+                      °C|
+                    </a>{" "}
+                    <a href="/" className="fahrenheit-link">
+                      F
+                    </a>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col-md-3 text-center">
+            <ul className="humid-wind-list">
+              <li>
+                <span className="humidity">
+                  Humidity: {placeholderHumidity}%
+                </span>
+              </li>
+              <li>
+                <span className="wind">Wind: {placeholderWind} km/h</span>
+              </li>
+            </ul>
+          </div>
+          <div className="col-md-3">
+            <img
+              className="img-fluid d-block weather-img"
+              src={weather}
+              alt="A person pointing to a weather forecast"
+            />
+          </div>
         </div>
       </div>
     );
