@@ -4,7 +4,7 @@ import a_cat from "./images/a_cat.jpg";
 export default function Footer() {
   return (
     <div className="App">
-      <footer id="footer">
+      <footer className="footer">
         <div className="logo">
           <small>
             <a
