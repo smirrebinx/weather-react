@@ -69,7 +69,7 @@ export default function Search() {
               />
               <div className="float-left">
                 <div className="temp-unit">
-                  <span className="currentDegree">{message.temperature}°C</span>
+                  <span className="currentDegree">{message.temperature}</span>
                   <span className="units">
                     <a href="/" className="celsius-link active">
                       °C
