@@ -6,6 +6,7 @@ export default function Footer() {
     <div className="App">
       <footer className="footer">
         <div className="logo">
+          <img src={a_cat} alt="Logo, black cat" />
           <small>
             <a
               href="https://github.com/smirrebinx/weather-react.git"
@@ -14,9 +15,7 @@ export default function Footer() {
             >
               Open source code
             </a>
-            <span className="logoTextSpan">by </span>
-            <img src={a_cat} alt="Logo, black cat" />
-            <span className="logoTextSpan">Michelle Wegler</span>
+            <span className="logoTextSpan">by Michelle Wegler</span>
           </small>
         </div>
       </footer>
