@@ -8,7 +8,7 @@ export default function Challenge() {
     <div className="container">
       <div className="weather-container">
         <Header />
-        <Search />
+        <Search defaultCity="Malmo" />
         <div>
           <div className="col text-center">
             <div className="weather-forecast" id="forecast"></div>

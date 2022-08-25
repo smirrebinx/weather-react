@@ -1,173 +1,102 @@
 import React, { useState } from "react";
 import axios from "axios";
 import weather from "./images/weather.png";
+import WeatherInfo from "./WeatherInfo";
 
-export default function Search() {
-  const [city, setCity] = useState(false);
-  const [submit, setSubmit] = useState("");
-  const [message, setMessage] = useState("");
-
-  let placeholderCity = "Malmo";
-  let placeholderDescription = "Clear";
-  let placeholderTemperature = "20";
-  let placeholderHumidity = "71";
-  let placeholderWind = "7";
+export default function Search(props) {
+  const [submit, setSubmit] = useState({ ready: false });
+  const [city, setCity] = useState(props.defaultCity);
 
   function showWeather(response) {
-    setSubmit(true);
-    setMessage({
-      temperature: Math.round(response.data.main.temp),
+    setSubmit({
+      ready: true,
+      temperature: response.data.main.temp,
       description: response.data.weather[0].description,
       humidity: response.data.main.humidity,
       wind: Math.round(response.data.wind.speed),
       icon: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      city: response.data.name,
     });
   }
 
   function handleSubmit(event) {
     event.preventDefault();
-    let apiEndpoint = "https://api.openweathermap.org/data/2.5/weather?";
-    let apiKey = "f74f9f2338bf06af72a7c11d8921c9c0";
-    let unit = "metric";
-    let apiUrl = `${apiEndpoint}q=${city}&appid=${apiKey}&units=${unit}`;
-
-    axios.get(`${apiUrl}`).then(showWeather);
+    search();
   }
 
   function updateCity(event) {
     setCity(event.target.value);
   }
 
-  let form = (
-    <form onSubmit={handleSubmit} onChange={updateCity}>
-      <div className="row">
-        <div className="col-md-8 align-items-center">
-          <div className="input-form">
-            <input
-              type="search"
-              placeholder="Search for a city"
-              className="form-control input-search"
-            />
-          </div>
-        </div>
-        <div className="col-sm-2 align-items-center">
-          <input
-            type="submit"
-            value="Search"
-            className="form-control btn btn-outline-secondary shadow-sm search-button"
-          />
-        </div>
-      </div>
-    </form>
-  );
+  function search() {
+    const apiKey = "f74f9f2338bf06af72a7c11d8921c9c0";
+    let apiEndpoint = "https://api.openweathermap.org/data/2.5/weather?";
+    let unit = "metric";
+    let apiUrl = `${apiEndpoint}q=${city}&appid=${apiKey}&units=${unit}`;
+    axios.get(`${apiUrl}`).then(showWeather);
+  }
 
-  let placeholderIcon = "https://ssl.gstatic.com/onebox/weather/64/sunny.png";
-
-  if (submit) {
+  if (submit.ready) {
     return (
       <div className="container">
-        {form}
-        <h2 className="city-heading">{city}</h2>
-        <ul className="location-description-list">
-          <li className="description">{message.description}</li>
-        </ul>
-        <div className="row">
-          <div className="col-md-6 icon d-flex align-items-center text-center">
-            <div className="clearfix weather-temperature">
-              <img
-                src={message.icon}
-                alt="Description of weather"
-                className="float-left"
+        <form onSubmit={handleSubmit}>
+          <div className="row">
+            <div className="col-9">
+              <input
+                type="search"
+                placeholder="Enter a city.."
+                className="form-control"
+                autoFocus="on"
+                onChange={updateCity}
               />
-              <div className="float-left">
-                <div className="temp-unit">
-                  <span className="currentDegree">{message.temperature}</span>
-                  <span className="units">
-                    <a href="/" className="celsius-link active">
-                      °C|
-                    </a>{" "}
-                    <a href="/" className="fahrenheit-link">
-                      F
-                    </a>
-                  </span>
+            </div>
+            <div className="col-3">
+              <input
+                type="submit"
+                value="Search"
+                className="btn btn-primary w-100"
+              />
+            </div>
+          </div>
+          <h2 className="city-heading"></h2>
+          <ul className="location-description-list">
+            <li className="description"></li>
+          </ul>
+          <div className="row">
+            <div className="col-md-6 icon d-flex align-items-center text-center">
+              <div className="clearfix weather-temperature">
+                <div className="float-left">
+                  <div className="temp-unit">
+                    <span className="currentDegree"></span>
+                    <span className="units"></span>
+                  </div>
                 </div>
               </div>
             </div>
+            <div className="col-md-3 text-center">
+              <ul className="humid-wind-list">
+                <li>
+                  <span className="humidity"></span>
+                </li>
+                <li>
+                  <span className="wind"></span>
+                </li>
+              </ul>
+            </div>
+            <div className="col-md-3">
+              <img
+                className="img-fluid d-block weather-img"
+                src={weather}
+                alt="A person pointing to a weather forecast"
+              />
+            </div>
           </div>
-          <div className="col-md-3 text-center">
-            <ul className="humid-wind-list">
-              <li>
-                <span className="humidity">Humidity: {message.humidity}%</span>
-              </li>
-              <li>
-                <span className="wind">Wind: {message.wind} km/h</span>
-              </li>
-            </ul>
-          </div>
-          <div className="col-md-3">
-            <img
-              className="img-fluid d-block weather-img"
-              src={weather}
-              alt="A person pointing to a weather forecast"
-            />
-          </div>
-        </div>
+        </form>
+        <WeatherInfo data={submit} />
       </div>
     );
   } else {
-    return (
-      <div className="container">
-        {form}
-        <h2 className="city-heading">{placeholderCity}</h2>
-        <ul className="location-description-list">
-          <li className="description">{placeholderDescription}</li>
-        </ul>
-        <div className="row">
-          <div className="col-md-6 icon d-flex align-items-center text-center">
-            <div className="clearfix weather-temperature">
-              <img
-                src={placeholderIcon}
-                alt="Description of weather"
-                className="float-left"
-              />
-              <div className="float-left">
-                <div className="temp-unit">
-                  <span className="currentDegree">
-                    {placeholderTemperature}
-                  </span>
-                  <span className="units">
-                    <a href="/" className="celsius-link active">
-                      °C|
-                    </a>{" "}
-                    <a href="/" className="fahrenheit-link">
-                      F
-                    </a>
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-md-3 text-center">
-            <ul className="humid-wind-list">
-              <li>
-                <span className="humidity">
-                  Humidity: {placeholderHumidity}%
-                </span>
-              </li>
-              <li>
-                <span className="wind">Wind: {placeholderWind} km/h</span>
-              </li>
-            </ul>
-          </div>
-          <div className="col-md-3">
-            <img
-              className="img-fluid d-block weather-img"
-              src={weather}
-              alt="A person pointing to a weather forecast"
-            />
-          </div>
-        </div>
-      </div>
-    );
+    search();
+    return "Please wait";
   }
 }
