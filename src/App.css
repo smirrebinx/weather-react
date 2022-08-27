@@ -90,6 +90,16 @@ p {
   font-family: "Xanh Mono", monospace;
 }
 
+.active {
+  cursor: default;
+  font-weight: bold;
+  color: #202020;
+}
+
+.active:hover {
+  color: #202020;
+}
+
 .input-form {
   padding-left: 32px;
 }
@@ -109,29 +119,10 @@ p {
   padding-left: 34px;
 }
 
-.celsius-link {
+.unit-link {
   text-decoration: none;
   font-size: 26px;
-}
-
-.fahrenheit-link {
-  text-decoration: none;
-  font-size: 26px;
-}
-
-.fahrenheit-link,
-.celsius-link {
   font-family: "Xanh Mono", monospace;
-}
-
-.active {
-  cursor: default;
-  font-weight: bold;
-  color: #202020;
-}
-
-.active:hover {
-  color: #202020;
 }
 
 .location-description-list {
