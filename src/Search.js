@@ -57,24 +57,6 @@ export default function Search(props) {
               />
             </div>
           </div>
-          <h2 className="city-heading"></h2>
-          <ul className="location-description-list">
-            <li className="description"></li>
-          </ul>
-          <div className="row">
-            <div className="col-md-6 icon d-flex align-items-center text-center"></div>
-            <div className="col-md-3 text-center">
-              <ul className="humid-wind-list">
-                <li>
-                  <span className="humidity"></span>
-                </li>
-                <li>
-                  <span className="wind"></span>
-                </li>
-              </ul>
-            </div>
-            <div className="col-md-3"></div>
-          </div>
         </form>
         <WeatherInfo data={submit} />
       </div>

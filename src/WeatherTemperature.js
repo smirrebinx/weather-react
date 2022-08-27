@@ -19,30 +19,36 @@ export default function WeatherTemperature(props) {
 
   if (unit === "celsius") {
     return (
-      <div className="temp-unit">
-        <span className="currentDegree">{Math.round(props.celsius)}</span>
-        <span className="unit-link units active">
-          {" "}
-          C° |{" "}
-          <a href="/" onClick={showFahrenheit}>
-            {" "}
-            °F
-          </a>
-        </span>
+      <div>
+        <div class="float-left">
+          <div className="temp-unit">
+            <span className="currentDegree">{Math.round(props.celsius)}</span>
+            <span className="unit-link units active">
+              {" "}
+              C°|
+              <a href="/" className="unit-link" onClick={showFahrenheit}>
+                °F
+              </a>
+            </span>
+          </div>
+        </div>
       </div>
     );
   } else {
     return (
-      <div className="temp-unit">
-        <span className="currentDegree">{Math.round(fahrenheit())}</span>{" "}
-        <span className="unit-link units active">
-          {" "}
-          <a href="/" onClick={showCelsius}>
-            {" "}
-            °C
-          </a>{" "}
-        </span>{" "}
-        <span className="unit-link"> °F</span>
+      <div>
+        <div class="float-left">
+          <div className="temp-unit">
+            <span className="currentDegree">{Math.round(fahrenheit())}</span>
+            <span className="unit-link units active">
+              {" "}
+              <a href="/" className="unit-link" onClick={showCelsius}>
+                °C|
+              </a>
+            </span>
+            <span className="unit-link units active">°F</span>
+          </div>
+        </div>
       </div>
     );
   }

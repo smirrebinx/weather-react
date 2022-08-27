@@ -90,6 +90,12 @@ p {
   font-family: "Xanh Mono", monospace;
 }
 
+.unit-link {
+  text-decoration: none;
+  font-size: 26px;
+  font-family: "Xanh Mono", monospace;
+}
+
 .active {
   cursor: default;
   font-weight: bold;
@@ -117,12 +123,6 @@ p {
   text-align: left;
   font-size: 26px;
   padding-left: 34px;
-}
-
-.unit-link {
-  text-decoration: none;
-  font-size: 26px;
-  font-family: "Xanh Mono", monospace;
 }
 
 .location-description-list {
