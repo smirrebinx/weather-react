@@ -18,11 +18,10 @@ export default function WeatherInfo(props) {
                 alt="Description of weather"
                 className="float-left"
               />
-              <div className="float-left"></div>
             </div>
-          </div>
-          <div>
-            <WeatherTemperature celsius={props.data.temperature} />
+            <div className="float-left">
+              <WeatherTemperature celsius={props.data.temperature} />
+            </div>
           </div>
           <div className="col-md-3 text-center">
             <ul className="humid-wind-list">
