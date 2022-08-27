@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import axios from "axios";
-import weather from "./images/weather.png";
 import WeatherInfo from "./WeatherInfo";
 
 export default function Search(props) {
@@ -41,11 +40,11 @@ export default function Search(props) {
       <div className="container">
         <form onSubmit={handleSubmit}>
           <div className="row">
-            <div className="col-9">
+            <div className="col-9 input-form">
               <input
                 type="search"
-                placeholder="Enter a city.."
-                className="form-control"
+                placeholder="Search for a city..."
+                className="form-control input-search"
                 autoFocus="on"
                 onChange={updateCity}
               />
@@ -54,7 +53,7 @@ export default function Search(props) {
               <input
                 type="submit"
                 value="Search"
-                className="btn btn-primary w-100"
+                className="form-control btn btn-outline-secondary shadow-sm search-button"
               />
             </div>
           </div>
@@ -63,16 +62,7 @@ export default function Search(props) {
             <li className="description"></li>
           </ul>
           <div className="row">
-            <div className="col-md-6 icon d-flex align-items-center text-center">
-              <div className="clearfix weather-temperature">
-                <div className="float-left">
-                  <div className="temp-unit">
-                    <span className="currentDegree"></span>
-                    <span className="units"></span>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <div className="col-md-6 icon d-flex align-items-center text-center"></div>
             <div className="col-md-3 text-center">
               <ul className="humid-wind-list">
                 <li>
@@ -83,13 +73,7 @@ export default function Search(props) {
                 </li>
               </ul>
             </div>
-            <div className="col-md-3">
-              <img
-                className="img-fluid d-block weather-img"
-                src={weather}
-                alt="A person pointing to a weather forecast"
-              />
-            </div>
+            <div className="col-md-3"></div>
           </div>
         </form>
         <WeatherInfo data={submit} />
