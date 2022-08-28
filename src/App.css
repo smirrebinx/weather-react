@@ -1,4 +1,14 @@
 /*react-weather-app*/
+:root {
+  --headings-font-family: "Xanh Mono", monospace;
+  --paragraph-font-family: "Xanh Mono", monospace;
+  --border-color: #94b1aa;
+  --primary-bg-color: #94b1aa;
+  --secondary-bg-color: #f4f6f6;
+  --primary-text-color: #000;
+  --box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 1), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
 body {
   background-image: url("../src/images/background.jpg");
   background-size: cover;
@@ -7,7 +17,7 @@ body {
 }
 
 h1 {
-  font-family: "Xanh Mono", monospace;
+  font-family: var(--headings-font-family);
   font-size: 4em;
   font-weight: bold;
 }
@@ -16,7 +26,7 @@ h2,
 h3,
 li,
 p {
-  font-family: "Xanh Mono", monospace;
+  font-family: var(--paragraph-font-family);
 }
 
 h1,
@@ -46,18 +56,18 @@ p {
 
 .weather-container {
   background-color: #fff;
-  border: 10px outset #94b1aa;
+  border: 10px outset var(--border-color);
   margin: 0 auto;
   margin-top: 40px;
   border-radius: 10px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 1), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: var(--box-shadow);
   max-width: fit-content;
 }
 
 .weather-forecast {
   text-align: center;
-  font-family: "Xanh Mono", monospace;
-  color: #000;
+  font-family: var(--paragraph-font-family);
+  color: var(--primary-text-color);
   margin-top: 20px;
   margin: 0 auto;
   padding: 0 20px 40px 20px;
@@ -94,23 +104,23 @@ p {
   font-size: 54px;
   position: relative;
   top: 6px;
-  font-family: "Xanh Mono", monospace;
+  font-family: var(--paragraph-font-family);
 }
 
 .unit-link {
   text-decoration: none;
   font-size: 26px;
-  font-family: "Xanh Mono", monospace;
+  font-family: var(--paragraph-font-family);
 }
 
 .active {
   cursor: default;
   font-weight: bold;
-  color: #202020;
+  color: var(--primary-text-color);
 }
 
 .active:hover {
-  color: #202020;
+  color: var(--primary-text-color);
 }
 
 .input-form {
@@ -118,8 +128,8 @@ p {
 }
 
 .search-button {
-  background-color: #94b1aa;
-  color: #000;
+  background-color: var(--primary-bg-color);
+  color: var(--primary-text-color);
 }
 
 .search-button:hover {
@@ -180,7 +190,7 @@ p {
 
 .footer p {
   font-size: 18px;
-  color: #000;
+  color: var(--primary-text-color);
   font-weight: bold;
 }
 
@@ -198,7 +208,7 @@ p {
   align-items: center;
   text-align: center;
   justify-content: center;
-  background-color: #fff;
+  background-color: var(--secondary-bg-color);
   padding: 5px 2px 5px 2px;
   border-radius: 10px;
   width: 370px;
@@ -212,4 +222,27 @@ p {
 
 .logoTextSpan {
   padding: 5px;
+}
+
+@media (max-width: 900px) {
+  h1 {
+    font-size: 50px;
+  }
+
+  h2 {
+    font-size: 32px;
+  }
+
+  a {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .logoTextSpan {
+    display: block;
+  }
+
+  .logo {
+    display: none;
+  }
 }
