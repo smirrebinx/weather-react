@@ -1,4 +1,11 @@
 /*react-weather-app*/
+body {
+  background-image: url("../src/images/background.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
 h1 {
   font-family: "Xanh Mono", monospace;
   font-size: 4em;
