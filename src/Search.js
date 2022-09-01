@@ -10,6 +10,8 @@ export default function Search(props) {
   function showWeather(response) {
     setSubmit({
       ready: true,
+      coordinates: response.data.coord,
+      date: new Date(response.data.dt * 1000),
       temperature: response.data.main.temp,
       description: response.data.weather[0].description,
       humidity: response.data.main.humidity,
@@ -29,7 +31,7 @@ export default function Search(props) {
   }
 
   function search() {
-    const apiKey = "f74f9f2338bf06af72a7c11d8921c9c0";
+    const apiKey = "88ee6169873d6d2e07af4c35247ba163";
     let apiEndpoint = "https://api.openweathermap.org/data/2.5/weather?";
     let unit = "metric";
     let apiUrl = `${apiEndpoint}q=${city}&appid=${apiKey}&units=${unit}`;
