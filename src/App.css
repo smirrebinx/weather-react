@@ -157,6 +157,15 @@ p {
   font-size: 26px;
 }
 
+.date {
+  text-align: left;
+  padding-left: 34px;
+}
+
+.date:first-letter {
+  text-transform: capitalize;
+}
+
 .description {
   text-align: left;
   padding-left: 34px;
@@ -166,6 +175,7 @@ p {
   text-transform: capitalize;
 }
 
+.date,
 .description,
 .humidity,
 .wind {
