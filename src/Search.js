@@ -35,7 +35,7 @@ export default function Search(props) {
     let apiEndpoint = "https://api.openweathermap.org/data/2.5/weather?";
     let unit = "metric";
     let apiUrl = `${apiEndpoint}q=${city}&appid=${apiKey}&units=${unit}`;
-    axios.get(`${apiUrl}`).then(showWeather);
+    axios.get(apiUrl).then(showWeather);
   }
 
   if (submit.ready) {

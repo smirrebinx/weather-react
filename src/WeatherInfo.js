@@ -14,8 +14,8 @@ export default function WeatherInfo(props) {
         <li className="description">{props.data.description}</li>
       </ul>
       <div className="WeatherInfo">
-        <div class="row">
-          <div class="col-md-6 icon d-flex align-items-center text-center">
+        <div className="row">
+          <div className="col-md-6 icon d-flex align-items-center text-center">
             <div className="clearfix weather-temperature">
               <img
                 src={props.data.icon}
@@ -39,7 +39,7 @@ export default function WeatherInfo(props) {
               </li>
             </ul>
           </div>
-          <div class="col-md-3">
+          <div className="col-md-3">
             <img
               className="img-fluid d-block weather-img"
               src={weather}
