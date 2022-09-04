@@ -20,12 +20,10 @@ export default function WeatherForecastDay(props) {
     return days[day];
   }
 
-  let ForecastIcon = `https://openweathermap.org/img/wn/03d@2x.png`;
-
   return (
     <div className="weather-forecast">
       <div className="weather-forecast-date"> {day()}</div>
-      <img src={ForecastIcon} alt="Description of weather" width="54"></img>
+      <img src={props.data.icon} alt="Description of weather" width="54"></img>
       <div>
         <span className="weather-forecast-temperature weather-forecast-temperature-max">
           {maxTemperature()}
