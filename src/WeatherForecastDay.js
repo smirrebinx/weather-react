@@ -12,7 +12,7 @@ export default function WeatherForecastDay(props) {
   }
 
   function forecastIcon() {
-    let icon = `https://openweathermap.org/img/wn/${props.data.icon}@2x.png`;
+    let icon = `https://openweathermap.org/img/wn/${props.data.weather[0].icon}@2x.png`;
     return `${icon}`;
   }
 
