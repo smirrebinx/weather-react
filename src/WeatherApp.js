@@ -3,7 +3,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import Search from "./Search";
 
-export default function Challenge() {
+export default function WeatherApp() {
   return (
     <div className="container">
       <div className="weather-container">
